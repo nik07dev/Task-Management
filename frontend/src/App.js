@@ -7,6 +7,7 @@ import Home from "./screens/Home";
 import Navbar from "./components/Navbar";
 import TaskList from "./components/TaskList";
 import EditForm from "./components/EditForm";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const Routing = () => {
   return (
@@ -32,10 +33,12 @@ const Routing = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routing />
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <Navbar />
+        <Routing />
+      </BrowserRouter>
+    </ErrorBoundary>
   );
 };
 
